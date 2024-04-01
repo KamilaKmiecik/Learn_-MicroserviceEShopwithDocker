@@ -7,7 +7,7 @@ public record CreateProductCommand(string Name, List<string> Category, string De
     : ICommand<CreateProductResult>;
 public record CreateProductResult(Guid ID);
 
-internal class CreateProductHandler : ICommandHandler<CreateProductCommand, CreateProductResult>
+internal class CreateProductCommandHandler : ICommandHandler<CreateProductCommand, CreateProductResult>
 {
     public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
     {
@@ -22,6 +22,6 @@ internal class CreateProductHandler : ICommandHandler<CreateProductCommand, Crea
 
         return new CreateProductResult(Guid.NewGuid());
 
-        throw new NotImplementedException();
+       // throw new NotImplementedException();
     }
 }
