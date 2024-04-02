@@ -20,6 +20,8 @@ internal class CreateProductCommandHandler : ICommandHandler<CreateProductComman
             Price = command.Price
         };
 
+        //session.
+
         return new CreateProductResult(Guid.NewGuid());
 
        // throw new NotImplementedException();
